@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>腸の学びセミナー お申し込み</title>
+<meta name="description" content="子どもの自然な発達を促す腸の学び〜腸内フローラと栄養〜 2026年10月20日（火）21:00〜22:00 Zoom開催">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<style>
+/* レイアウト：1カラム。上にセミナー案内（濃い緑の表紙）、下に申し込み用紙。 */
+:root {
+  --bg: #F4F9F6;
+  --surface: #FFFFFF;
+  --cover: #1A4731;
+  --cover-fg: #F4F9F6;
+  --cover-sub: #B9D8C9;
+  --green: #0F6E56;
+  --tint: #E8F5EE;
+  --gold: #C9982A;
+  --gold-tint: #FDF6E8;
+  --text: #1A2E25;
+  --sub: #4A6A5A;
+  --line: #CFE2D8;
+  --field: #FFFFFF;
+  --error: #C0392B;
+  --error-tint: #FDECEA;
+  --on-green: #FFFFFF;
+  --display: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+  --body: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1C16;
+    --surface: #17281F;
+    --cover: #123524;
+    --cover-fg: #EAF4EE;
+    --cover-sub: #9DC4B1;
+    --green: #3FB48E;
+    --tint: #1D3529;
+    --gold: #E0B450;
+    --gold-tint: #2E2814;
+    --text: #E6F0EA;
+    --sub: #A3BEB0;
+    --line: #2F4A3D;
+    --field: #0F1C16;
+    --error: #F08A7E;
+    --error-tint: #3A1E1B;
+    --on-green: #0F1C16;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.8;
+}
+[hidden] { display: none !important; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+a { color: var(--green); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* ---- 表紙 ---- */
+.cover {
+  background: var(--cover);
+  color: var(--cover-fg);
+  padding-block: 40px 44px;
+  padding-inline: 20px;
+}
+.cover-inner, .wrap { max-width: 640px; margin-inline: auto; }
+.host { font-size: 13px; letter-spacing: .08em; color: var(--cover-sub); margin: 0 0 18px; }
+.cover h1 { font-size: clamp(26px, 7vw, 38px); line-height: 1.4; font-weight: 700; }
+.subtitle { font-family: var(--display); font-size: clamp(17px, 4.6vw, 21px); color: var(--gold); margin: 10px 0 0; font-weight: 500; }
+.facts { margin: 28px 0 0; display: grid; gap: 10px; }
+.facts div { display: grid; grid-template-columns: 5em 1fr; gap: 12px; align-items: baseline; }
+.facts dt { font-size: 13px; color: var(--cover-sub); letter-spacing: .06em; }
+.facts dd { margin: 0; font-weight: 500; min-width: 0; }
+.facts small { display: block; font-size: 13px; font-weight: 400; color: var(--cover-sub); line-height: 1.6; }
+.tag { display: inline-block; margin-top: 22px; padding: 3px 14px; border: 1px solid var(--gold); border-radius: 999px; color: var(--gold); font-size: 13px; }
+
+/* ---- 本文 ---- */
+.wrap { padding-block: 36px 56px; padding-inline: 20px; display: grid; gap: 40px; }
+.wrap > section { display: grid; gap: 16px; min-width: 0; }
+.wrap h2 { font-size: 20px; color: var(--green); }
+.program { margin: 0; padding: 0; list-style: none; counter-reset: p; border-top: 1px solid var(--line); }
+.program li {
+  counter-increment: p;
+  display: grid; grid-template-columns: 2em 1fr; gap: 8px;
+  padding-block: 12px; border-bottom: 1px solid var(--line);
+}
+.program li::before { content: counter(p); font-family: var(--display); font-weight: 700; color: var(--gold); }
+.speaker { background: var(--tint); border-radius: 10px; padding: 18px 20px; }
+.speaker h3 { font-size: 19px; }
+.speaker p { margin: 4px 0 0; color: var(--sub); font-size: 15px; overflow-wrap: anywhere; }
+
+/* ---- 申し込み用紙 ---- */
+.sheet { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px 20px 28px; }
+form { display: grid; gap: 26px; }
+.q { display: grid; gap: 8px; min-width: 0; border: 0; padding: 0; margin: 0; }
+.q > label, .q > legend { font-weight: 700; padding: 0; }
+.req, .opt { font-size: 12px; font-weight: 500; margin-left: 8px; padding: 1px 8px; border-radius: 4px; vertical-align: 2px; }
+.req { background: var(--green); color: var(--on-green); }
+.opt { background: var(--tint); color: var(--sub); }
+.hint { font-size: 13px; color: var(--sub); margin: 0; line-height: 1.6; }
+input[type=text], input[type=email], input[type=tel], select, textarea {
+  width: 100%; font: inherit; color: var(--text); background: var(--field);
+  border: 1.5px solid var(--line); border-radius: 8px; padding: 12px 14px; min-height: 50px;
+}
+textarea { min-height: 110px; resize: vertical; }
+input:focus, select:focus, textarea:focus { border-color: var(--green); outline: 3px solid var(--tint); outline-offset: 0; }
+.choices { display: grid; gap: 8px; }
+.choices.two { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.choices label {
+  display: flex; gap: 10px; align-items: center;
+  border: 1.5px solid var(--line); border-radius: 8px; padding: 10px 14px; min-height: 50px;
+  cursor: pointer; line-height: 1.5; background: var(--field);
+}
+.choices input { width: 20px; height: 20px; flex: none; accent-color: var(--green); margin: 0; }
+.choices label:has(input:checked) { border-color: var(--green); background: var(--tint); }
+.pay { background: var(--gold-tint); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; }
+.pay p { margin: 0; font-size: 15px; }
+.pay .choices label { background: var(--surface); }
+.err { color: var(--error); font-size: 14px; margin: 0; font-weight: 500; }
+.invalid input[type=text], .invalid input[type=email], .invalid .choices label { border-color: var(--error); }
+.alert { background: var(--error-tint); color: var(--error); border-radius: 8px; padding: 12px 16px; margin: 0; font-weight: 500; }
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+button.send {
+  font: inherit; font-family: var(--display); font-weight: 700; font-size: 18px;
+  background: var(--green); color: var(--on-green); border: 0; border-radius: 999px;
+  padding: 16px 24px; min-height: 58px; cursor: pointer; width: 100%;
+}
+button.send:disabled { opacity: .6; cursor: default; }
+.done { text-align: center; display: grid; gap: 14px; padding-block: 12px; }
+.done h2 { font-size: 22px; }
+.done ol { text-align: left; margin: 0; padding-left: 1.4em; display: grid; gap: 6px; }
+.sign { color: var(--sub); margin: 8px 0 0; }
+footer { text-align: center; font-size: 13px; color: var(--sub); }
+@media (prefers-reduced-motion: no-preference) { button.send, .choices label { transition: background-color .15s, border-color .15s; } }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="cover-inner">
+    <p class="host">WGK 子どもの歩き方と発育の学校</p>
+    <h1>子どもの自然な発達を促す<br>腸の学び</h1>
+    <p class="subtitle">〜腸内フローラと栄養〜</p>
+    <dl class="facts">
+      <div><dt>日時</dt><dd>2026年10月20日（火）21:00〜22:00</dd></div>
+      <div><dt>形式</dt><dd>Zoom開催<small>Zoomリンクは改めてご案内いたします</small></dd></div>
+      <div><dt>参加費</dt><dd>一般 3,300円<small>銀行振込。詳細は後ほどお送りいたします</small></dd></div>
+      <div><dt>講師</dt><dd>勝山 泰志 先生</dd></div>
+    </dl>
+    <span class="tag">アーカイブあり</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section aria-labelledby="h-program">
+    <h2 id="h-program">セミナー内容</h2>
+    <ol class="program">
+      <li>腸内フローラとは何か</li>
+      <li>腸内フローラの3つの重要な働き</li>
+      <li>子どもの腸内フローラはどう育つか</li>
+      <li>腸内フローラの乱れと子どもの不調</li>
+      <li>今日から実践できる栄養サポート</li>
+      <li>まとめ</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="h-speaker">
+    <h2 id="h-speaker">講師紹介</h2>
+    <div class="speaker">
+      <h3>勝山 泰志 先生</h3>
+      <p>浦和消化器内視鏡クリニック 院長</p>
+      <p><a href="https://urawa-endoscopy.jp/" target="_blank" rel="noopener">https://urawa-endoscopy.jp/</a></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-form">
+    <h2 id="h-form">お申し込み</h2>
+    <div class="sheet">
+
+      <form id="entry" novalidate>
+        <div class="q" data-q="name">
+          <label for="name">お名前<span class="req">必須</span></label>
+          <input type="text" id="name" name="name" autocomplete="name" maxlength="60" placeholder="例：山田 花子">
+        </div>
+
+        <div class="q" data-q="kana">
+          <label for="kana">ふりがな<span class="req">必須</span></label>
+          <input type="text" id="kana" name="kana" maxlength="60" placeholder="例：やまだ はなこ">
+        </div>
+
+        <div class="q" data-q="email">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <p class="hint">Zoomリンクとお振込先のご案内をお送りします。</p>
+          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="例：hanako@example.com">
+        </div>
+
+        <div class="q" data-q="email2">
+          <label for="email2">メールアドレス（確認）<span class="req">必須</span></label>
+          <input type="email" id="email2" name="email2" autocomplete="off" inputmode="email" maxlength="120" placeholder="もう一度ご入力ください">
+        </div>
+
+        <div class="q" data-q="tel">
+          <label for="tel">電話番号<span class="opt">任意</span></label>
+          <p class="hint">メールが届かない場合のご連絡に使います。</p>
+          <input type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="例：090-1234-5678">
+        </div>
+
+        <fieldset class="q" data-q="attend">
+          <legend>ご参加方法<span class="req">必須</span></legend>
+          <div class="choices">
+            <label><input type="radio" id="attend-live" name="attend" value="当日Zoomで参加"> 当日Zoomで参加します</label>
+            <label><input type="radio" id="attend-archive" name="attend" value="アーカイブ視聴"> アーカイブで視聴します</label>
+            <label><input type="radio" id="attend-unsure" name="attend" value="未定"> まだ決めていません</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="age">
+          <legend>お子さんの年齢<span class="req">必須</span></legend>
+          <p class="hint">あてはまるものをすべてお選びください。</p>
+          <div class="choices two">
+            <label><input type="checkbox" id="age-1" name="age" value="0〜1歳"> 0〜1歳</label>
+            <label><input type="checkbox" id="age-2" name="age" value="2〜3歳"> 2〜3歳</label>
+            <label><input type="checkbox" id="age-3" name="age" value="4〜6歳"> 4〜6歳</label>
+            <label><input type="checkbox" id="age-4" name="age" value="小学1〜3年生"> 小学1〜3年生</label>
+            <label><input type="checkbox" id="age-5" name="age" value="小学4〜6年生"> 小学4〜6年生</label>
+            <label><input type="checkbox" id="age-6" name="age" value="中学生以上"> 中学生以上</label>
+            <label><input type="checkbox" id="age-7" name="age" value="妊娠中・これから"> 妊娠中・これから</label>
+            <label><input type="checkbox" id="age-8" name="age" value="支援者・専門職として参加"> 支援者・専門職として参加</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="wgk">
+          <legend>WGKの講座について<span class="req">必須</span></legend>
+          <div class="choices">
+            <label><input type="radio" id="wgk-1" name="wgk" value="現在受講中"> 現在受講中です</label>
+            <label><input type="radio" id="wgk-2" name="wgk" value="以前受講"> 以前受講しました</label>
+            <label><input type="radio" id="wgk-3" name="wgk" value="セミナー参加経験あり"> セミナーに参加したことがあります</label>
+            <label><input type="radio" id="wgk-4" name="wgk" value="はじめて"> 今回がはじめてです</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="concern">
+          <legend>お子さんのお腹やごはんで気になること<span class="opt">任意</span></legend>
+          <p class="hint">あてはまるものをすべてお選びください。</p>
+          <div class="choices two">
+            <label><input type="checkbox" id="c-1" name="concern" value="お通じが出にくい"> お通じが出にくい</label>
+            <label><input type="checkbox" id="c-2" name="concern" value="お腹がゆるくなりやすい"> お腹がゆるくなりやすい</label>
+            <label><input type="checkbox" id="c-3" name="concern" value="好き嫌いが多い"> 好き嫌いが多い</label>
+            <label><input type="checkbox" id="c-4" name="concern" value="食が細い"> 食が細い</label>
+            <label><input type="checkbox" id="c-5" name="concern" value="甘いものが多くなりがち"> 甘いものが多くなりがち</label>
+            <label><input type="checkbox" id="c-6" name="concern" value="風邪をひきやすい"> 風邪をひきやすい</label>
+            <label><input type="checkbox" id="c-7" name="concern" value="肌のトラブル"> 肌のトラブル</label>
+            <label><input type="checkbox" id="c-8" name="concern" value="落ち着きにくい"> 落ち着きにくい</label>
+            <label><input type="checkbox" id="c-9" name="concern" value="眠りが気になる"> 眠りが気になる</label>
+            <label><input type="checkbox" id="c-10" name="concern" value="特にないが学びたい"> 特にないが学びたい</label>
+          </div>
+        </fieldset>
+
+        <div class="q" data-q="question">
+          <label for="question">講師に聞いてみたいこと<span class="opt">任意</span></label>
+          <textarea id="question" name="question" maxlength="1000" placeholder="当日、できるかぎりお答えします"></textarea>
+        </div>
+
+        <div class="q" data-q="source">
+          <label for="source">このセミナーを何で知りましたか<span class="opt">任意</span></label>
+          <select id="source" name="source">
+            <option value="">お選びください</option>
+            <option>WGKのLINE</option>
+            <option>Instagram</option>
+            <option>Facebook</option>
+            <option>メール</option>
+            <option>ご紹介</option>
+            <option>KIZUカイロプラクティックの院内</option>
+            <option>その他</option>
+          </select>
+        </div>
+
+        <div class="q pay" data-q="agree">
+          <p><strong>参加費：一般 3,300円（銀行振込）</strong><br>お振込先などの詳細は、お申し込み後にメールでお送りします。</p>
+          <div class="choices">
+            <label><input type="checkbox" id="agree" name="agree" value="yes"> 参加費とお支払い方法を確認しました</label>
+          </div>
+        </div>
+
+        <div class="trap" aria-hidden="true">
+          <label for="website">このらんは空のままにしてください</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <p class="alert" id="formError" role="alert" hidden></p>
+        <button type="submit" class="send" id="send">この内容で申し込む</button>
+      </form>
+
+      <div class="done" id="done" hidden tabindex="-1">
+        <h2>お申し込みを受け付けました</h2>
+        <p>ありがとうございます。<span id="doneMail"></span></p>
+        <ol>
+          <li>確認メールが届きます。届かない場合は迷惑メールフォルダをご確認ください。</li>
+          <li>お振込先のご案内を、後ほどメールでお送りします。</li>
+          <li>Zoomリンクは、開催日までに改めてご案内いたします。</li>
+        </ol>
+        <p class="sign">当日お会いできるのを楽しみにしています。<br>WGK　Tadaaki Kizu</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>主催：WGK 子どもの歩き方と発育の学校</footer>
+</main>
+
+<script>
+// ===== 設定：GASをデプロイして発行された「ウェブアプリのURL」を貼り付けてください =====
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbwDpdLfWR8J8MTFMXxOyekYnL9MwJ5gDDGUBs0yXHe-c19hZawqpG7oXdTE00y6wSXSEQ/exec';
+// =========================================================================================
+
+const form = document.getElementById('entry');
+const sendBtn = document.getElementById('send');
+const formError = document.getElementById('formError');
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function setError(key, msg) {
+  const q = form.querySelector('[data-q="' + key + '"]');
+  let p = q.querySelector('.err');
+  if (!msg) { q.classList.remove('invalid'); if (p) p.remove(); return; }
+  q.classList.add('invalid');
+  if (!p) { p = document.createElement('p'); p.className = 'err'; q.appendChild(p); }
+  p.textContent = msg;
+}
+
+function collect() {
+  const fd = new FormData(form);
+  const text = k => (fd.get(k) || '').toString().trim();
+  return {
+    name: text('name'), kana: text('kana'),
+    email: text('email'), email2: text('email2'), tel: text('tel'),
+    attend: text('attend'), age: fd.getAll('age'), wgk: text('wgk'),
+    concern: fd.getAll('concern'), question: text('question'), source: text('source'),
+    agree: fd.get('agree') === 'yes', website: text('website')
+  };
+}
+
+function validate(d) {
+  const errors = {
+    name: d.name ? '' : 'お名前をご入力ください',
+    kana: d.kana ? '' : 'ふりがなをご入力ください',
+    email: !d.email ? 'メールアドレスをご入力ください' : (emailRe.test(d.email) ? '' : 'メールアドレスの形をご確認ください（例：hanako@example.com）'),
+    email2: d.email2 === d.email ? '' : '上のメールアドレスと同じものをご入力ください',
+    attend: d.attend ? '' : 'ご参加方法をお選びください',
+    age: d.age.length ? '' : 'ひとつ以上お選びください',
+    wgk: d.wgk ? '' : 'ひとつお選びください',
+    agree: d.agree ? '' : 'ご確認のうえ、チェックを入れてください'
+  };
+  let first = null;
+  Object.keys(errors).forEach(k => { setError(k, errors[k]); if (errors[k] && !first) first = k; });
+  return first;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  formError.hidden = true;
+  const d = collect();
+  const first = validate(d);
+  if (first) {
+    const q = form.querySelector('[data-q="' + first + '"]');
+    q.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const el = q.querySelector('input, select, textarea');
+    if (el) el.focus({ preventScroll: true });
+    return;
+  }
+  if (!GAS_URL) {
+    formError.textContent = '送信先がまだ設定されていません（管理者の方へ：GAS_URL を設定してください）。';
+    formError.hidden = false;
+    return;
+  }
+  sendBtn.disabled = true;
+  sendBtn.textContent = '送信しています…';
+  try {
+    delete d.email2;
+    // Content-Type を指定しない（text/plain）ことで、GASへそのまま送れます
+    const res = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(d) });
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.message || 'error');
+    form.hidden = true;
+    const done = document.getElementById('done');
+    document.getElementById('doneMail').textContent = d.email + ' 宛に確認メールをお送りしました。';
+    done.hidden = false;
+    done.focus();
+    done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (err) {
+    formError.textContent = '送信できませんでした。通信状況をご確認のうえ、もう一度お試しください。';
+    formError.hidden = false;
+    sendBtn.disabled = false;
+    sendBtn.textContent = 'この内容で申し込む';
+  }
+});
+
+form.addEventListener('input', (e) => {
+  const q = e.target.closest('[data-q]');
+  if (q && q.classList.contains('invalid')) setError(q.dataset.q, '');
+});
+</script>
+</body>
+</html>
